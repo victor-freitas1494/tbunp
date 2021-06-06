@@ -1,0 +1,17 @@
+body{
+    background-color: #fff5eb;
+}
+.div-login{
+    background-color: #deedf0;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 550px;
+}
+
+.div-login form{
+    position: relative;
+    top: calc(50% - 73px);
+    right: calc(-50% + 190px);
+    width: 380px;
+}
