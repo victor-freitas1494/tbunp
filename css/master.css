@@ -1,0 +1,11 @@
+@import '../framework/bootstrap/bootstrap.min.css';
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body{
+    width: 100vh;
+    height: 100%;
+}
