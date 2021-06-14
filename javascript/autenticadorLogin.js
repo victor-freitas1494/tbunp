@@ -11,7 +11,7 @@ document.getElementById('submit').addEventListener('click', function(e){
         if (mng == true){
             window.location.href = "../sistema/dashboard.php";
         }else if (mng == false){
-            alert('erro de login ou senha');
+            alert('Login ou senha inválidos. Tente novamente!');
         }
       });
 })
