@@ -25,3 +25,10 @@ ul {
   li a:hover {
     background-color: #111; 
   }
+
+  .sticky {
+    z-index: 1000;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+  }
