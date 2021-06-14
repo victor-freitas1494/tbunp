@@ -9,7 +9,7 @@ document.getElementById('submit').addEventListener('click', function(e){
         }
       }).done(function(mng) {
         if (mng == true){
-            window.location.href = "../sistema/dashboard.html";
+            window.location.href = "../sistema/dashboard.php";
         }else if (mng == false){
             alert('erro de login ou senha');
         }
