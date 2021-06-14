@@ -2,7 +2,7 @@
     $Server = "localhost";
     $User = "root";
     $Passe = "usbw";
-    $basedados = "sistema";
+    $basedados = "tbunp";
 
     $connect = new mysqli($Server, $User, $Passe, $basedados);
 ?>
