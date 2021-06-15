@@ -16,7 +16,7 @@ ul {
   li a {
     display: block;
     color: white;
-    text-align: center;
+    text-align: end;
     padding: 14px 16px;
     text-decoration: none;
     margin-left: 35px;
@@ -41,5 +41,6 @@ ul {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: auto;
     width: 50%;
   }

@@ -2,7 +2,7 @@ body{
     background-color: #fff5eb;
 }
 .div-login{
-    background-color: #deedf0;
+    background-color: #e9ded4;
     position: absolute;
     right: 0;
     height: 100vh;
@@ -15,3 +15,15 @@ body{
     right: calc(-50% + 190px);
     width: 380px;
 }
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .btn-primary{
+      border-color: transparent;
+      background-color: rgb(150, 147, 147);
+  }
+  
