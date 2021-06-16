@@ -2,7 +2,7 @@
   session_start();
   include_once('../php/ConectDB.php');
   
-  if($_SESSION['sys'] != false){
+  if($_SESSION['sys'] != false || $_SESSION['sys'] == null){
     header('Location: ../php/exit.php');
   }
 
