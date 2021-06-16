@@ -46,7 +46,7 @@
         </div> 
 
         <?php
-            if ($_SESSION['usuario']['cargo'] == 'administrador'){
+            if ($_SESSION['usuario']['cargo'] == 'administrador' or 'juiz'){
         ?>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Nome Completo</span>
