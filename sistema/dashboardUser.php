@@ -1,7 +1,7 @@
 <?php
   include_once('../php/Authentication.php');
   session_start();
-  if($_SESSION['sys'] != false || $_SESSION['sys'] == null){
+  if($_SESSION['sys'] != false || $_SESSION['sys'] == !null){
     header('Location: ../php/exit.php');
   }
   
@@ -54,7 +54,7 @@
         $total = mysqli_num_rows($exibirmed);
     ?>
         <div class="sysUser">
-            <input type="button" value="Novo" class="btn btn-primary">
+            <input type="button" value="Novo" class="btn btn-primary" id="btn-novo">
     <div>
       <table class="table table-striped">
       <thead>
@@ -93,7 +93,7 @@
       
       ?>
       <div class="sysUser">
-            <input type="button" value="Novo" class="btn btn-primary">
+            <input type="button" value="Novo" class="btn btn-primary" id="btn-novo">
     <div>
       <table class="table table-striped">
       <thead>
@@ -127,5 +127,6 @@
    <?php }?>
     <script src="../framework/jquery/jquery.min.js"></script>
     <script src="../framework/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/redirencionar.js"></script>
 </body>
 </html>
