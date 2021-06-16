@@ -6,8 +6,10 @@
     $row = $resultado->fetch_assoc();
     if($row['login'] === $_POST['login'] && $row['senha'] === md5($_POST['password'])){
         $_SESSION['usuario'] = $row;
+        $_SESSION['sys'] = true;
         echo true;
     }else{
+        $_SESSION['sys'] = false;
         echo false;
     }
 ?>
