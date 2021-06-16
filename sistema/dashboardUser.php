@@ -1,7 +1,7 @@
 <?php
   include_once('../php/Authentication.php');
   session_start();
-  if($_SESSION['sys'] != false){
+  if($_SESSION['sys'] != false || $_SESSION['sys'] == null){
     header('Location: ../php/exit.php');
   }
   
@@ -46,15 +46,15 @@
             </ul>
         </div>
     </div>
+
+    <?php
+      if($_SESSION['usuario']['cargo'] == 'administrador'){
+        $exibirmed = mysqli_query($connect,"SELECT id_usuario,nome,login,cargo FROM tb_usuario");
+        $linha = mysqli_fetch_assoc($exibirmed);
+        $total = mysqli_num_rows($exibirmed);
+    ?>
         <div class="sysUser">
             <input type="button" value="Novo" class="btn btn-primary">
-            <?php 
-      
-      $exibirmed = mysqli_query($connect,"SELECT id_usuario,nome,login,cargo FROM tb_usuario");
-      $linha = mysqli_fetch_assoc($exibirmed);
-      $total = mysqli_num_rows($exibirmed);
-    ?>
-
     <div>
       <table class="table table-striped">
       <thead>
@@ -85,9 +85,46 @@
   </tbody>
 </table>
     </div>
-        
-    
-        </div>
+    <?php }elseif($_SESSION['usuario']['cargo'] == 'juiz'){
+      $exibirmed = mysqli_query($connect,"SELECT id_usuario,nome,login,cargo FROM tb_usuario WHERE cargo = 'usuario'");
+      $linha = mysqli_fetch_assoc($exibirmed);
+      $total = mysqli_num_rows($exibirmed);
+      
+      
+      ?>
+      <div class="sysUser">
+            <input type="button" value="Novo" class="btn btn-primary">
+    <div>
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Login</th>
+          <th scope="col">Cargo</th>
+          <th scope="col">Acao</th>
+
+        </tr>
+      </thead>
+  <tbody>
+    <?php 
+      if ($total > 0){
+        do {
+    ?>
+    <tr>
+
+      <th scope="row"><?=$linha['nome']?></th>
+      <td><?=$linha['login']?></td>
+      <td><?=$linha['cargo']?></td>
+      <td><a href="dashboardmodific.php?user=<?=$linha['id_usuario']?>">editar</a></td>
+    </tr>
+
+    <?php } while ($linha = mysqli_fetch_assoc($exibirmed));
+      }
+    ?>
+  </tbody>
+</table>
+    </div>
+   <?php }?>
     <script src="../framework/jquery/jquery.min.js"></script>
     <script src="../framework/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
