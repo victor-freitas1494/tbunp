@@ -50,17 +50,17 @@
         ?>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Nome Completo</span>
-                <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
             </div>
 
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">data de nacimento</span>
-                <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
+                <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
             </div>
             
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">login</span>
-                <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
             </div>
 
             <div class="input-group mb-3">
@@ -69,12 +69,7 @@
             </div>
 
             <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Nome Completo</span>
-                <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Nome Completo</span>
+                <span class="input-group-text" id="inputGroup-sizing-default">Cargo</span>
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Open this select menu</option>
                     <option value="1">One</option>
