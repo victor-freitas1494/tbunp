@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/evento.css">
     
     <title>Evento</title>
 </head>
@@ -51,7 +52,7 @@
     <?php 
           if($_SESSION['usuario']['cargo'] == 'administrador' or 'juiz'){
     ?>
-    <div class="container">
+    <div class="container mt-3">
       <div class="row">
             <table class="table table-striped">
               <thead>
@@ -79,7 +80,7 @@
             </table>
       </div>
       <?php if($_SESSION['usuario']['cargo'] == 'administrador' || $_SESSION['usuario']['cargo'] == 'juiz'){?>
-      <div class="d-grid gap-2 mt-2">
+      <div class="d-grid gap-2 mt-2 margem">
         <a href="newEvent.php" class="btn btn-secondary" role="button" aria-pressed="true" style="color: black;" id="btn_novoEvento">Novo Evento</a>
       </div>
       <?php }?>
