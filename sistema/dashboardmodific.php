@@ -52,29 +52,29 @@
             </ul>
         </div>
     </div>
-      <div class="container mt-5">
-        <div class="row margens">
+        <div class="container mt-5">
+          <div class="row margens">
             <div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">ID</span>
-                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $editlinha['id_usuario'];?>" disabled id="id_usuario"> 
+                <input type="text" class="form-control" aria-label="Id" aria-describedby="basic-addon1" value="<?php echo $editlinha['id_usuario'];?>" disabled id="id_usuario"> 
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Nome</span>
-                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $editlinha['nome'];?>" id="inputNome">
+                <input type="text" class="form-control" aria-label="Nome" aria-describedby="basic-addon1" value="<?php echo $editlinha['nome'];?>" id="inputNome">
               </div>
 
               <div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">Usuário</span>
-                  <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?=$editlinha['login']?>" id="inputUser">
+                  <input type="text" class="form-control" aria-label="Usuário" aria-describedby="basic-addon1" value="<?=$editlinha['login']?>" id="inputUser">
                 </div>
 
                 <div>
                   <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">Senha</span>
-                  <input type="password" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1" id="inputPassword">
+                  <input type="password" class="form-control" placeholder="Senha" aria-label="Username" aria-describedby="basic-addon1" id="inputPassword">
                 </div>
 
                 <div>
@@ -82,18 +82,23 @@
                     <span class="input-group-text" id="basic-addon1">Permissões</span>
                     <select class="form-select" aria-label="Default select example" id="selectCargo">
                       <option selected><?=$editlinha['cargo']?></option>
-                      <option value="administrador">Administrador</option>
-                      <option value="juiz">Juíz</option>
-                      <option value="usuario">Usuário</option>
+                      <option value="administrador">administrador</option>
+                      <option value="juiz">juiz</option>
+                      <option value="usuario">usuario</option>
                     </select>
                   </div>
-                  
-                  <input type="button" value="Salvar" class="btn btn-primary" id="submit">
+                  <div class="d-grid gap-2 mt-2">
+                    <a role="button" aria-pressed="true" style="color: black;" class="btn btn-primary" id="submit">Salvar</a>
+                  </div>
+                </div>
+
+                <div class="d-grid gap-2 mt-2">
+                    <a href="dashboardUser.php" class="btn btn-secondary" role="button" aria-pressed="true" style="color: black;" id="btn_cancelar">Cancelar</a>
                 </div>
               </div>
             </div>
+          </div>
         </div>
-      </div>
     <script src="../framework/jquery/jquery.min.js"></script>
     <script src="../javascript/updatedb.js"></script>
     <script src="../framework/bootstrap/bootstrap.bundle.min.js"></script>
