@@ -78,9 +78,11 @@
               </tbody>
             </table>
       </div>
+      <?php if($_SESSION['usuario']['cargo'] == 'administrador' || $_SESSION['usuario']['cargo'] == 'juiz'){?>
       <div class="d-grid gap-2 mt-2">
         <a href="newEvent.php" class="btn btn-secondary" role="button" aria-pressed="true" style="color: black;" id="btn_novoEvento">Novo Evento</a>
       </div>
+      <?php }?>
     </div>
 
     <?php } ?>
