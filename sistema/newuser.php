@@ -55,19 +55,19 @@
                 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nome Completo</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputNome">
                 </div>
 
                 <div class="input-group mb-3">
                 </style>
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de Nascimento</span>
                     <input name="date" type="text" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" class="form-control"
-                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputDate">
                 </div>
                 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Usuário</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputUser">
                 </div>
 
                 <div class="input-group mb-3">
@@ -77,7 +77,7 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cargo</span>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" id="selectCargo">
                         <option selected></option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -100,5 +100,6 @@
         <script src="../framework/jquery/jquery.min.js"></script>
         <script src="../framework/bootstrap/bootstrap.bundle.min.js"></script>
         <script src="../javascript/redirencionar.js"></script>
+        <script src="../javascript/cadastra.js"></script>
     </body>
 </html>
