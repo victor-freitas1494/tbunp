@@ -53,14 +53,33 @@
             <div class="row margem">            
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nome do Evento</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputEvent">
                 </div>
 
                 <div class="input-group mb-3">
                 </style>
                     <span class="input-group-text" id="inputGroup-sizing-default">Data do Evento</span>
                     <input name="date" type="text" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" class="form-control"
-                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputPassword">
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputDate">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Usuario</span>
+                    <select class="form-select" aria-label="Default select example" id="selectUsuario">
+                    <option selected></option>
+                    <?php
+                        $consultaUsuario = $connect->query("SELECT id_usuario, nome FROM `tb_usuario` WHERE cargo = 'usuario'");
+                        $UsuarioLinha = $consultaUsuario->fetch_assoc();
+                        $UsuarioRow = mysqli_num_rows($consultaUsuario);
+                        if($UsuarioRow > 0){
+                            do{             
+                    ?>
+                        <option value="<?=$UsuarioLinha['id_usuario']?>"><?=$UsuarioLinha['nome']?></option>
+                    <?php 
+                            }while($UsuarioLinha = $consultaUsuario->fetch_assoc());
+                        }                    
+                    ?>  
+                    </select>
                 </div>
 
                 <div class="d-grid gap-2">
@@ -78,5 +97,6 @@
         <script src="../framework/jquery/jquery.min.js"></script>
         <script src="../framework/bootstrap/bootstrap.bundle.min.js"></script>
         <script src="../javascript/redirencionar.js"></script>
+        <script src="../javascript/cadastraEvent.js"></script>
     </body>
 </html>
