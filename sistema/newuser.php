@@ -1,5 +1,6 @@
 <?php
     include_once('../php/Authentication.php');
+    include_once("../php/ConectDB.php"); 
     session_start();
     if($_SESSION['sys'] != false || $_SESSION['sys'] == !null){
         header('Location: ../php/exit.php');
@@ -78,10 +79,19 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cargo</span>
                     <select class="form-select" aria-label="Default select example" id="selectCargo">
-                        <option selected></option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <option selected></option>
+                    <?php
+                        $consultpermissao = $connect->query("SELECT * FROM `permissao`");
+                        $permissaoLinha = $consultpermissao->fetch_assoc();
+                        $permissaoRow = mysqli_num_rows($consultpermissao);
+                        if($permissaoRow > 0){
+                            do{             
+                    ?>
+                        <option value="<?=$permissaoLinha['permissoes']?>"><?=$permissaoLinha['permissoes']?></option>
+                    <?php 
+                            }while($permissaoLinha = $consultpermissao->fetch_assoc());
+                        }                    
+                    ?>  
                     </select>
                 </div>
 
