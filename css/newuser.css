@@ -1,0 +1,26 @@
+.btn-primary{
+  border-color: transparent;
+  background-color: rgb(62, 144, 199)!important;
+}
+
+.btn-secondary{
+  border-color: transparent;
+  background-color: #9d9ea3!important;
+}
+
+.margem{
+  display: block;
+  margin-top: 18%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+.center{
+    top: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
