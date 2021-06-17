@@ -6,7 +6,7 @@
     header('Location: ../php/exit.php');
   }
 
-    $consuledit = $connect->query("SELECT nome,login,cargo FROM tb_usuario WHERE id_usuario = {$_GET['user']}");
+    $consuledit = $connect->query("SELECT id_usuario,nome,login,cargo FROM tb_usuario WHERE id_usuario = {$_GET['user']}");
     $editlinha = $consuledit->fetch_assoc();
     $consulpermissao =  $connect->query("SELECT * FROM permissao");
     $permissaolinha = mysqli_fetch_assoc($consulpermissao);
@@ -56,26 +56,31 @@
         <div class="row margens">
             <div>
               <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">ID</span>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $editlinha['id_usuario'];?>" disabled id="id_usuario"> 
+              </div>
+
+              <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Nome</span>
-                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $editlinha['nome'];?>">
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $editlinha['nome'];?>" id="inputNome">
               </div>
 
               <div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">Usuário</span>
-                  <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?=$editlinha['login']?>">
+                  <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?=$editlinha['login']?>" id="inputUser">
                 </div>
 
                 <div>
                   <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">Senha</span>
-                  <input type="password" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1">
+                  <input type="password" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1" id="inputPassword">
                 </div>
 
                 <div>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Permissões</span>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" id="selectCargo">
                       <option selected><?=$editlinha['cargo']?></option>
                       <option value="administrador">Administrador</option>
                       <option value="juiz">Juíz</option>
@@ -83,13 +88,14 @@
                     </select>
                   </div>
                   
-                  <input type="button" value="Salvar" class="btn btn-primary">
+                  <input type="button" value="Salvar" class="btn btn-primary" id="submit">
                 </div>
               </div>
             </div>
         </div>
       </div>
     <script src="../framework/jquery/jquery.min.js"></script>
+    <script src="../javascript/updatedb.js"></script>
     <script src="../framework/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>
