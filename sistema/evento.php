@@ -1,5 +1,6 @@
 <?php
   include_once('../php/Authentication.php');
+  include_once('../php/ConectDB.php');
   session_start();
 
   if($_SESSION['sys'] != false || $_SESSION['sys'] == !null){
@@ -61,14 +62,17 @@
               </thead>
               <tbody>
                 <?php 
-                  if ($total > 0){
+                  $consulta_evnt = $connect->query('SELECT DISTINCT `nome_evento`,`data_evt` FROM `tb_evento`');
+                  $consulta_evnt_linha = $consulta_evnt->fetch_assoc();
+                  $consulta_evnt_row = mysqli_num_rows($consulta_evnt);
+                  if ($consulta_evnt_row > 0){
                     do {
                 ?>
                 <tr>
-                  <th scope="row"><?=$linha['nome_evento']?></th>
-                  <td><?=$linha['data_evt']?></td>
+                  <th scope="row"><?=$consulta_evnt_linha['nome_evento']?></th>
+                  <td><?=$consulta_evnt_linha['data_evt']?></td>
                 </tr>
-                <?php } while ($linha = mysqli_fetch_assoc($exibirmed));
+                <?php } while ($consulta_evnt_linha = mysqli_fetch_assoc($consulta_evnt));
                   }
                 ?>
               </tbody>
