@@ -51,13 +51,13 @@
     
     <?php 
       if($_SESSION['usuario']['cargo'] == 'usuario' or 'adminstrador' or 'juiz'){
-      $exibirmed = mysqli_query($connect,"SELECT evento.nome_evento, medalhas.med_ouro, medalhas.med_prata, medalhas.med_bronze FROM tb_evento evento, tb_medalhas medalhas WHERE evento.fk_usuario = 2 AND evento.id_evento = medalhas.fk_evento");
+      $exibirmed = mysqli_query($connect,"SELECT evento.nome_evento, medalhas.med_ouro, medalhas.med_prata, medalhas.med_bronze FROM tb_evento evento, tb_medalhas medalhas WHERE evento.fk_usuario >= 10  AND evento.id_evento = medalhas.fk_evento");
       $linha = mysqli_fetch_assoc($exibirmed);
       $total = mysqli_num_rows($exibirmed);
     ?>
 
 
-      <div class="container">
+      <div class="container mt-3">
         <div class="row">
           <table class="table table-striped">
             <thead>
