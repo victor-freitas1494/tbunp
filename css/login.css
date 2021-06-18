@@ -29,8 +29,13 @@ body{
     margin-left: 90px!important;
   }
 
-  .btn-primary{
+.btn-primary{
       border-color: transparent;
       background-color: rgb(150, 147, 147);
   }
+
+.btn-sec{
+    background-color: rgb(255, 0, 0);
+    width: 50%;
+}
   
