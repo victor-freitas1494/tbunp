@@ -1,4 +1,11 @@
 .margemNovo{
-    display: block;
     margin-left: 90%!important;
-  }
+}
+
+.margi{
+  margin-left: 90%!important;
+}
+
+.btn-primo{
+  background-color: aliceblue;
+}
